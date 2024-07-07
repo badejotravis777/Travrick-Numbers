@@ -3,58 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travrick Numbers Game</title>
+    <title>Number Guessing Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Travrick Numbers Game</h1>
-        <p id="welcome-message" class="hidden">Welcome, <span id="username"></span></p>
-    </header>
-
+    <!-- Authentication Container -->
     <div id="auth-container">
-        <div id="login-form" class="auth-screen">
+        <!-- Login Form -->
+        <div id="login-form">
             <h2>Login</h2>
-            <input type="text" id="login-username" placeholder="Username">
-            <input type="password" id="login-password" placeholder="Password">
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
             <button id="login-button">Login</button>
-            <p id="login-error" class="error-message hidden">Invalid username or password</p>
-            <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            <div id="login-error" class="hidden">Invalid username or password.</div>
+            <p>Don't have an account? <button id="show-signup">Sign Up</button></p>
         </div>
 
-        <div id="signup-form" class="auth-screen hidden">
+        <!-- Signup Form -->
+        <div id="signup-form" class="hidden">
             <h2>Sign Up</h2>
-            <input type="text" id="signup-username" placeholder="Username">
-            <input type="email" id="signup-email" placeholder="Email">
-            <input type="password" id="signup-password" placeholder="Password">
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
             <button id="signup-button">Sign Up</button>
-            <p id="signup-error" class="error-message hidden">Sign up error</p>
-            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            <div id="signup-error" class="hidden">Username already exists.</div>
+            <p>Already have an account? <button id="show-login">Login</button></p>
         </div>
     </div>
 
+    <!-- Game Container -->
     <div id="game-container" class="hidden">
-        <div id="game-options">
+        <div id="welcome-message" class="hidden">
+            <h2>Welcome to Travrick Numbers, <span id="username"></span>!</h2>
+            <p>Points: <span id="user-points"></span></p>
+        </div>
+        <div>
+            <h3>Select Game Mode</h3>
             <button class="game-mode" id="beginner-mode">Beginner</button>
             <button class="game-mode" id="intermediate-mode">Intermediate</button>
             <button class="game-mode" id="expert-mode">Expert</button>
-            <button id="start-game">Start Game</button>
-            <button id="show-past-matches">Show Past Matches</button>
-            <button id="quit-game">Quit</button>
-            <p>Points: <span id="user-points">0</span></p>
         </div>
+        <button id="start-game">Start Game</button>
+        <button id="quit-game">Quit</button>
+
         <div id="game-area" class="hidden">
-            <h2>Game Area</h2>
-            <p>Attempts left: <span id="attempts-left"></span></p>
-            <input type="number" id="user-input" placeholder="Enter your guess">
+            <input type="number" id="user-input" placeholder="Enter your guess" required>
             <button id="submit-guess">Submit Guess</button>
+            <p>Attempts Left: <span id="attempts-left"></span></p>
             <p id="hint-message"></p>
+        </div>
+
+        <div>
+            <button id="show-past-matches">Show Past Matches</button>
+            <div id="past-matches"></div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>Produced by Travrick Technology Industry</p>
         <p>&copy; 2024 Travrick. All rights reserved.</p>
+        <p>Owner: Badejo Olatubosun Travis</p>
+        <p>Contact: badejotravis7@gmail.com</p>
+        
     </footer>
 
     <script src="script.js"></script>
