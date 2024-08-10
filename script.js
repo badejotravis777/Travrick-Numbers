@@ -4,6 +4,16 @@ let userPoints = 0;
 let loggedInUser = null;
 let targetNumber = 0;
 
+const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a1", "#a133ff", "#33fff3"];
+
+
+document.getElementById("start-intro").addEventListener("click", () => {
+    document.getElementById("intro-container").classList.add("hidden");
+    document.getElementById("auth-container").classList.remove("hidden");
+});
+
+
+
 // Initialize the user data from localStorage
 let userData = JSON.parse(localStorage.getItem('userData')) || {};
 
@@ -196,6 +206,8 @@ document.getElementById("show-past-matches").addEventListener("click", function(
         alert("Please login or sign up to view past matches.");
     }
 });
+
+
 
 // Function to reset the game
 function resetGame() {
